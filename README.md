@@ -37,7 +37,7 @@ Se você deseja clonar e rodar o código de algum projeto em sua máquina:
 3. Abra o Arquivo index.html (ou busca.html): Abra o arquivo HTML principal diretamente no seu navegador. O JavaScript cuidará do resto!
 
 # ✉️ Contato
-Seu Nome: [Gustavo Mathias]
+[Gustavo Mathias]
 
 gmail: [gustavoflor2025@gmail.com]
 
