@@ -1,0 +1,333 @@
+
+/* --- Variáveis de Tema (Paleta de Jogo) --- */
+:root {
+    --color-bg: #0a0f18;         /* Fundo "Espacial" / Escuro */
+    --color-primary: #00f7ff;    /* Ciano Neon (Acento) */
+    --color-secondary: #2a3b5c;  /* Azul "UI" Escuro */
+    --color-text: #e0e0e0;       /* Texto claro (Cinza suave) */
+    --color-text-dark: #0a0f18;  /* Texto para botões claros */
+    --color-border: #1a243b;     /* Borda sutil */
+}
+
+/* --- Reset Básico e Fontes --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Habilita o scroll suave nativo */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* --- Header / HUD --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 15, 24, 0.85); /* Fundo com transparência */
+    backdrop-filter: blur(10px); /* Efeito de vidro (moderno) */
+    padding: 1rem 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.main-header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.main-header ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-header li {
+    margin-left: 1.5rem;
+}
+
+.main-header a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.main-header a:hover {
+    color: var(--color-primary); /* Efeito "Selecionado" */
+}
+
+/* --- Seções do Jogo --- */
+.game-section {
+    padding: 10rem 0 5rem 0; /* 10rem no top para compensar o header fixo */
+    min-height: 100vh; /* Cada seção ocupa a tela inteira */
+    border-bottom: 2px dashed var(--color-border); /* Divisor de "nível" */
+}
+
+#inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#inicio h1 {
+    font-size: 4rem;
+}
+
+#inicio .subtitle {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+}
+
+/* --- Botões (Estilo "Game UI") --- */
+.cta-button {
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    transform: scale(1.05); /* Efeito de "Power-up" */
+    box-shadow: 0 0 20px var(--color-primary);
+}
+
+/* --- Seção de Projetos (Level Select) --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Efeito de flutuar */
+    box-shadow: 0 10px 30px rgba(0, 247, 255, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 1rem 1.5rem 0.5rem 1.5rem;
+    color: var(--color-text); /* Título do card normal */
+}
+
+.project-card p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+.card-footer {
+    padding: 1rem 1.5rem;
+    background-color: var(--color-border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+}
+.btn-primary:hover {
+    background-color: #fff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+}
+
+
+/* --- Seção Sobre (Player Stats) --- */
+.about-content {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.skills-tree {
+    flex: 1;
+    background-color: var(--color-secondary);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.skill-bar {
+    margin-bottom: 1.5rem;
+}
+
+.skill-bar label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.bar {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar .level {
+    display: block;
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    /* A largura (width) é definida no HTML inline */
+}
+
+/* --- Seção Contato --- */
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary);
+}
+
+/* --- Responsividade (Mobile "Game Boy" View) --- */
+@media (max-width: 768px) {
+    .main-header nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .main-header ul {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .main-header li {
+        margin: 0 0.5rem;
+    }
+
+    #inicio h1 {
+        font-size: 2.5rem;
+    }
+
+    #inicio .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .game-section {
+        padding-top: 12rem; /* Mais espaço para o header maior */
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+}
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s
+    ease-out, transform 0.6s ease-out;
+}
+.show{
+    opacity: 1;
+    transform: translateY(0);
+}
